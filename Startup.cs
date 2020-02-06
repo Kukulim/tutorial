@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using tutorial.Models;
 
 namespace tutorial
 {
@@ -23,6 +24,7 @@ namespace tutorial
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddSingleton<IEmployeeRepository, MyEmployeeRepository>();
         
         }
 
