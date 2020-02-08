@@ -8,5 +8,6 @@ namespace tutorial.Models
     public interface IEmployeeRepository
     {
         Employee GetEmployee(int ID);
+        IEnumerable<Employee> GetAllEmployee();
     }
 }

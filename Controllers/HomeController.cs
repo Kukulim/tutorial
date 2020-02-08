@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using tutorial.Models;
+using tutorial.ViewModels;
 
 namespace tutorial.Controllers
 {
@@ -14,9 +15,19 @@ namespace tutorial.Controllers
         {
             _employeeRepository = employeeRepository;
         }
-        public string Index()
+        public ViewResult Index()
         {
-            return _employeeRepository.GetEmployee(1).Name;
+            var model = _employeeRepository.GetAllEmployee();
+            return View(model);
+        }
+        public ViewResult Details()
+        {
+            HomeDetailsViewModels homeDetailsViewModels = new HomeDetailsViewModels()
+            {
+                Employee = _employeeRepository.GetEmployee(1),
+                Pagename = "Employee Details Page"
+            };              
+            return View(homeDetailsViewModels);
         }
     }
 }

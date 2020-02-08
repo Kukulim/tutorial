@@ -18,6 +18,12 @@ namespace tutorial.Models
             };
 
         }
+
+        public IEnumerable<Employee> GetAllEmployee()
+        {
+            return _employeeList;
+        }
+
         public Employee GetEmployee(int ID)
         {
             return _employeeList.FirstOrDefault(e => e.ID == ID);
