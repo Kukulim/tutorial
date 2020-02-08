@@ -1,9 +1,8 @@
-﻿@model IEnumerable<tutorial.Models.Employee>
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
+﻿@model IEnumerable<Employee>
+
+@{ 
+    ViewBag.Title = "Employee list";
+}
         <table>
             <thead>
                 <tr>
@@ -24,5 +23,3 @@
             }
 
         </table>
-    </body>
-    </html>

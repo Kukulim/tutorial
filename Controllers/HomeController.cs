@@ -20,11 +20,11 @@ namespace tutorial.Controllers
             var model = _employeeRepository.GetAllEmployee();
             return View(model);
         }
-        public ViewResult Details()
+        public ViewResult Details(int? id)
         {
             HomeDetailsViewModels homeDetailsViewModels = new HomeDetailsViewModels()
             {
-                Employee = _employeeRepository.GetEmployee(1),
+                Employee = _employeeRepository.GetEmployee(id??1),
                 Pagename = "Employee Details Page"
             };              
             return View(homeDetailsViewModels);
