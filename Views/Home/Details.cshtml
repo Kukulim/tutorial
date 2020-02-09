@@ -4,15 +4,28 @@
 }
 
 
-    <h1>@Model.Pagename</h1>
 
-    <div>
-        Name: @Model.Employee.Name
-    </div>
-    <div>
-        Email: @Model.Employee.Email
-    </div>
-    <div>
-        Department: @Model.Employee.Department
-    </div>
+    <div class="row justify-content-center m-3">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>@Model.Employee.Name</h3>
+                </div>
 
+                <div class="card-body text-center">
+                    <img class="card-img-top" src="~/images/person.jpg" asp-append-version="true" />
+                    <h4>Name: @Model.Employee.Name</h4>
+                    <h4>Email: @Model.Employee.Email</h4>
+                    <h4>Department: @Model.Employee.Department</h4>
+                </div>
+
+                <div class="card-footer text-center">
+                    <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="#" class="btn btn-danger">Delate</a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>

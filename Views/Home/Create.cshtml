@@ -1,0 +1,25 @@
+﻿@model Employee
+
+    <div class="container">
+        <form asp-controller="Home" asp-action="Create" method="post">
+            <div class="col-md-4 text-center m-auto">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Name:</label>
+                    <input asp-for="Name" type="text" class="form-control" id="NameText">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address:</label>
+                    <input asp-for="Email" type="email" class="form-control" id="EmailText">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Department:</label>
+                    <select type="text" class="form-control" id="DepartmentText" asp-items="Html.GetEnumSelectList<DepEnum>()"></select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+
+        </form>
+    </div>

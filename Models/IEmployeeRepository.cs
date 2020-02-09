@@ -9,5 +9,6 @@ namespace tutorial.Models
     {
         Employee GetEmployee(int ID);
         IEnumerable<Employee> GetAllEmployee();
+        Employee AddEmployee(Employee employee);
     }
 }

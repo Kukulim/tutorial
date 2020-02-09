@@ -29,5 +29,16 @@ namespace tutorial.Controllers
             };              
             return View(homeDetailsViewModels);
         }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public RedirectToActionResult Create(Employee employee)
+        {
+            Employee newEmployee = _employeeRepository.AddEmployee(employee);
+            return RedirectToAction( "details", new { id = newEmployee.ID });
+        }
     }
 }
