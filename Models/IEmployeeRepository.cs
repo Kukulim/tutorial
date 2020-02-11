@@ -10,5 +10,8 @@ namespace tutorial.Models
         Employee GetEmployee(int ID);
         IEnumerable<Employee> GetAllEmployee();
         Employee AddEmployee(Employee employee);
+        Employee DeleteEmployee(int id);
+        Employee EditEmployee(Employee employee);
+
     }
 }

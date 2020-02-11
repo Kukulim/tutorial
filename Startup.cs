@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,8 +24,10 @@ namespace tutorial
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<AppDBContext>( options => options.UseSqlServer(_config.GetConnectionString("EmployeeDbConection")));
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
-            services.AddSingleton<IEmployeeRepository, MyEmployeeRepository>();
+            services.AddScoped<IEmployeeRepository, SQLServerRepository>();
         
         }
 

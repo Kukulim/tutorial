@@ -26,6 +26,28 @@ namespace tutorial.Models
             return employee;
         }
 
+        public Employee DeleteEmployee(int id)
+        {
+            Employee employee = _employeeList.FirstOrDefault(e => e.ID == id);
+            if(employee != null) 
+            { 
+                _employeeList.Remove(employee);
+            }
+            return employee;
+        }
+
+        public Employee EditEmployee(Employee employee)
+        {
+            Employee employee1 = _employeeList.FirstOrDefault(e => e.ID == employee.ID);
+            if (employee != null)
+            {
+                employee1.Name = employee.Name;
+                employee1.Email = employee.Email;
+                employee1.Department = employee.Department;
+            }
+            return employee1;
+        }
+
         public IEnumerable<Employee> GetAllEmployee()
         {
             return _employeeList;
